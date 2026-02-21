@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vincent - Portfolio</title>
+    <meta name="description" content="Software Engineer and Developer Portfolio">
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        (function() {
+            try {
+                var saved = localStorage.getItem('theme');
+                var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var theme = saved === 'dark' || saved === 'light' ? saved : (systemDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+</head>
+<body class="bg-global-bg text-global-text antialiased">
+    <a class="skip-link" href="#main">skip to content</a>
+    <!-- Fixed Header -->
+    <header id="main-header" class="group">
+        <div class="header-grid">
+            <!-- Title -->
+            <div class="header-title">
+                <span class="text-xl font-bold sm:text-2xl">Vincent Camenen</span>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="mobile-nav-menu header-nav sm:flex sm:flex-row sm:items-center" id="navigation-menu" aria-label="Main menu">
+                <a href="#about" aria-current="false">About</a>
+                <a href="#projects" aria-current="false">Projects</a>
+                <a href="#resume" aria-current="false">Résumé</a>
+            </nav>
+
+            <!-- Controls (spans both rows via CSS grid) -->
+            <div class="header-controls">
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" class="flex items-center justify-center" aria-label="Switch to dark theme">
+                    <svg class="sun-icon" fill="none" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="currentColor">
+                        <path d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M22 12L23 12" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12 2V1" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12 23V22" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M20 20L19 19" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M20 4L19 5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M4 20L5 19" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M4 4L5 5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M1 12L2 12" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                    <svg class="moon-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+                        <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+                        <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2"></path>
+                        <path d="M19 11h2m-1 -1v2"></path>
+                    </svg>
+                </button>
+
+                <!-- Mobile Menu Toggle -->
+                <button id="toggle-navigation-menu" class="flex items-center justify-center p-1 sm:hidden" aria-expanded="false" aria-label="Toggle navigation menu">
+                    <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5"></path>
+                    </svg>
+                    <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main" class="mx-auto max-w-3xl px-4 sm:px-8">
+        <!-- About Section -->
+        <section id="about" class="mb-16">
+            <div class="prose" id="about-content"></div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="mb-16">
+            <div class="prose" id="projects-content"></div>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume" class="mb-16">
+            <div class="prose" id="resume-content"></div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div class="mx-auto max-w-3xl px-4 sm:px-8 py-8 text-center text-sm opacity-75">
+        <nav class="footer-nav" aria-label="Footer navigation">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#resume">Résumé</a>
+        </nav>
+        <p>Crafted with Claude · built on <a href="https://github.com/jrosseruk/jrosseruk.github.io" class="footer-link">J Rosser's portfolio</a> and <a href="https://astro-cactus.chriswilliams.dev" class="footer-link">astro-theme-cactus</a></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
